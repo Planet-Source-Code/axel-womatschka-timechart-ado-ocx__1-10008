@@ -1,0 +1,285 @@
+VERSION 5.00
+Begin VB.PropertyPage Zeitraum 
+   Caption         =   "Zeitraum"
+   ClientHeight    =   5760
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   5940
+   PaletteMode     =   0  'Rasterbild
+   ScaleHeight     =   5760
+   ScaleWidth      =   5940
+   Begin VB.Frame Frame1 
+      Caption         =   "Optional"
+      Height          =   2955
+      Left            =   60
+      TabIndex        =   8
+      Top             =   2700
+      Width           =   5775
+      Begin VB.TextBox txtToolTip_Y 
+         Height          =   330
+         Left            =   90
+         TabIndex        =   15
+         Top             =   2280
+         Width           =   2700
+      End
+      Begin VB.TextBox txtFilter_Bedingung 
+         Height          =   330
+         Left            =   3090
+         TabIndex        =   13
+         Top             =   1020
+         Width           =   2610
+      End
+      Begin VB.TextBox txtFilter_Feldname 
+         Height          =   330
+         Left            =   90
+         TabIndex        =   9
+         Top             =   1020
+         Width           =   2700
+      End
+      Begin VB.Label lblToolTip_Y 
+         Caption         =   $"Zeitraum.pgx":0000
+         Height          =   660
+         Index           =   0
+         Left            =   120
+         TabIndex        =   16
+         Top             =   1530
+         Width           =   5550
+      End
+      Begin VB.Label Label4 
+         AutoSize        =   -1  'True
+         Caption         =   "="
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   2880
+         TabIndex        =   14
+         Top             =   1020
+         Width           =   135
+      End
+      Begin VB.Label Label3 
+         AutoSize        =   -1  'True
+         Caption         =   "Feldname"
+         Height          =   195
+         Left            =   120
+         TabIndex        =   12
+         Top             =   780
+         Width           =   690
+      End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         Caption         =   "Bedingung"
+         Height          =   195
+         Left            =   3090
+         TabIndex        =   11
+         Top             =   810
+         Width           =   765
+      End
+      Begin VB.Label lblFilter_Feldname 
+         Caption         =   "Name eines Feldes der Tabelle NAMEN, für das Sie eine Bedingung angeben möchten"
+         Height          =   390
+         Index           =   0
+         Left            =   90
+         TabIndex        =   10
+         Top             =   300
+         Width           =   4860
+      End
+   End
+   Begin VB.CheckBox chkLegende 
+      Caption         =   "Legende anzeigen ?"
+      Height          =   285
+      Left            =   90
+      TabIndex        =   7
+      Top             =   2310
+      Width           =   2700
+   End
+   Begin VB.TextBox txtCaption_Y_Achse 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   90
+      MaxLength       =   18
+      TabIndex        =   5
+      ToolTipText     =   "Bezeichnung der Y-Achse"
+      Top             =   1890
+      Width           =   2700
+   End
+   Begin VB.TextBox txtJahr 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   90
+      MaxLength       =   4
+      TabIndex        =   3
+      ToolTipText     =   "Jahreszahl im Format JJJJ"
+      Top             =   1020
+      Width           =   2700
+   End
+   Begin VB.TextBox txtQuartal 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   90
+      MaxLength       =   1
+      TabIndex        =   1
+      ToolTipText     =   "Quartal (1,2, 3 oder 4)"
+      Top             =   370
+      Width           =   2700
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      Caption         =   "(Bezeichnung für die Y-Achse)"
+      Height          =   195
+      Left            =   90
+      TabIndex        =   6
+      Top             =   1680
+      Width           =   2145
+   End
+   Begin VB.Label lblCaption_Y_Achse 
+      BackColor       =   &H00000000&
+      Caption         =   "Caption_Y_Achse:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   90
+      TabIndex        =   4
+      ToolTipText     =   "Überschrift der Y-Achse (Linke Spalte)"
+      Top             =   1420
+      Width           =   2700
+   End
+   Begin VB.Label lblJahr 
+      BackColor       =   &H00000000&
+      Caption         =   "Jahr:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   90
+      TabIndex        =   2
+      Top             =   770
+      Width           =   2700
+   End
+   Begin VB.Label lblQuartal 
+      BackColor       =   &H00000000&
+      Caption         =   "Quartal:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   90
+      TabIndex        =   0
+      Top             =   120
+      Width           =   2700
+   End
+End
+Attribute VB_Name = "Zeitraum"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Private Sub txtFilter_Bedingung_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtToolTip_Y_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtFilter_Feldname_Change()
+    Changed = True
+End Sub
+
+
+Private Sub chkLegende_Click()
+    Changed = True
+End Sub
+
+
+Private Sub txtCaption_Y_Achse_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtJahr_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtQuartal_Change()
+    Changed = True
+End Sub
+
+
+Private Sub PropertyPage_ApplyChanges()
+    SelectedControls(0).Filter_Bedingung = txtFilter_Bedingung.Text
+    SelectedControls(0).ToolTip_Y = txtToolTip_Y.Text
+    SelectedControls(0).Filter_Feldname = txtFilter_Feldname.Text
+    SelectedControls(0).Legende = (chkLegende.Value = vbChecked)
+    SelectedControls(0).Caption_Y_Achse = txtCaption_Y_Achse.Text
+    SelectedControls(0).Jahr = txtJahr.Text
+    SelectedControls(0).Quartal = txtQuartal.Text
+End Sub
+
+
+Private Sub PropertyPage_SelectionChanged()
+    txtFilter_Bedingung.Text = SelectedControls(0).Filter_Bedingung
+    txtToolTip_Y.Text = SelectedControls(0).ToolTip_Y
+    txtFilter_Feldname.Text = SelectedControls(0).Filter_Feldname
+    chkLegende.Value = (SelectedControls(0).Legende And vbChecked)
+    txtCaption_Y_Achse.Text = SelectedControls(0).Caption_Y_Achse
+    txtJahr.Text = SelectedControls(0).Jahr
+    txtQuartal.Text = SelectedControls(0).Quartal
+End Sub
+
+

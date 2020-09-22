@@ -1,0 +1,491 @@
+VERSION 5.00
+Begin VB.PropertyPage Datenbank 
+   Caption         =   "Datenbank"
+   ClientHeight    =   6975
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   6480
+   PaletteMode     =   0  'Rasterbild
+   ScaleHeight     =   6975
+   ScaleWidth      =   6480
+   Begin VB.TextBox txtConnectionString 
+      Height          =   330
+      Left            =   120
+      TabIndex        =   20
+      Text            =   """Provider=Microsoft.Jet.OLEDB.4.0;Data Source="" & App.Path & ""\sample.mdb"";Persist Security Info=False"""
+      Top             =   390
+      Width           =   6210
+   End
+   Begin VB.TextBox txtTabFeld_ANZAHL_URLAUBSTAGE 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   3630
+      TabIndex        =   16
+      ToolTipText     =   "Optional: Feldname des Feldes, das Anzahl der Urlaubstage angibt"
+      Top             =   2295
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTabFeld_NUMMER 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   3060
+      TabIndex        =   14
+      ToolTipText     =   "Feldname des Feldes (Typ Long), das die Datensätze der Y-Achse eindeutig kennzeichnet (INDEX)"
+      Top             =   4200
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTabFeld_NAMEN 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   3060
+      TabIndex        =   12
+      ToolTipText     =   "Feldname des Feldes, das die Werte (Beschriftung) der Y-Achse enthält"
+      Top             =   3390
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTabFeld_Sonderurlaub 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   3630
+      TabIndex        =   10
+      ToolTipText     =   "Optional: Feldname des JA/NEIN Feldes, das Sonderurlaub angibt"
+      Top             =   1665
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTabFeld_Datum_bis 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   750
+      TabIndex        =   8
+      ToolTipText     =   "Feldname, das die Werte des Enddatums enthält"
+      Top             =   2310
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTabFeld_Datum_von 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   750
+      TabIndex        =   6
+      ToolTipText     =   "Feldname, das die Werte des Startdatums enthält"
+      Top             =   1665
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTabelle_NAMEN 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   90
+      TabIndex        =   4
+      ToolTipText     =   "Welche Tabelle enthält die Werte der Y-Achse ?"
+      Top             =   3015
+      Width           =   2700
+   End
+   Begin VB.TextBox txtTabelle_DATUM 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   330
+      Left            =   90
+      TabIndex        =   2
+      ToolTipText     =   "Welche Tabelle enthält die Datumsangaben"
+      Top             =   1020
+      Width           =   2700
+   End
+   Begin VB.Label Label_Info 
+      BackColor       =   &H00C0FFFF&
+      Caption         =   "Info"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1755
+      Left            =   30
+      TabIndex        =   19
+      Top             =   5160
+      Width           =   6375
+   End
+   Begin VB.Label Label2 
+      Caption         =   "(Name des Feldes (Typ Long oder String), das die Datensätze der Y-Achse eindeutig kennzeichnet (INDEX))"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   525
+      Left            =   180
+      TabIndex        =   18
+      Top             =   4560
+      Width           =   4335
+   End
+   Begin VB.Label Label1 
+      Caption         =   "(Name des Feldes, das die Werte (Beschriftung) der Y-Achse enthält)"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
+      Left            =   180
+      TabIndex        =   17
+      Top             =   3630
+      Width           =   2745
+   End
+   Begin VB.Label lblTabFeld_ANZAHL_URLAUBSTAGE 
+      BackColor       =   &H00808080&
+      Caption         =   "TabFeld_ANZAHL_URLAUBSTAGE:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   3630
+      TabIndex        =   15
+      Top             =   2040
+      Width           =   2700
+   End
+   Begin VB.Label lblTabFeld_NUMMER 
+      BackColor       =   &H00808080&
+      Caption         =   "TabFeld_NUMMER:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   180
+      TabIndex        =   13
+      Top             =   4200
+      Width           =   2700
+   End
+   Begin VB.Label lblTabFeld_NAMEN 
+      BackColor       =   &H00808080&
+      Caption         =   "TabFeld_NAMEN:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   210
+      TabIndex        =   11
+      Top             =   3390
+      Width           =   2700
+   End
+   Begin VB.Label lblTabFeld_Sonderurlaub 
+      BackColor       =   &H00808080&
+      Caption         =   "TabFeld_Sonderurlaub:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   3630
+      TabIndex        =   9
+      Top             =   1410
+      Width           =   2700
+   End
+   Begin VB.Label lblTabFeld_Datum_bis 
+      BackColor       =   &H00808080&
+      Caption         =   "TabFeld_Datum_bis:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   750
+      TabIndex        =   7
+      Top             =   2055
+      Width           =   2700
+   End
+   Begin VB.Label lblTabFeld_Datum_von 
+      BackColor       =   &H00808080&
+      Caption         =   "TabFeld_Datum_von:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   750
+      TabIndex        =   5
+      Top             =   1410
+      Width           =   2700
+   End
+   Begin VB.Label lblTabelle_NAMEN 
+      BackColor       =   &H00000000&
+      Caption         =   "Tabelle_NAMEN: (Y-Achse; Y-Axis)"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   120
+      TabIndex        =   3
+      Top             =   2730
+      Width           =   6210
+   End
+   Begin VB.Label lblTabelle_DATUM 
+      BackColor       =   &H00000000&
+      Caption         =   "Name der Tabelle, deren Datumsangaben dargestellt werden sollen"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   90
+      TabIndex        =   1
+      Top             =   765
+      Width           =   6240
+   End
+   Begin VB.Label lblDatenbankpfad 
+      BackColor       =   &H00000000&
+      Caption         =   "ConnectionString (Verbindungszeichenfolge für ADO)"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   240
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   6210
+   End
+End
+Attribute VB_Name = "Datenbank"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+
+Private Sub txtConnectionString_Change()
+    Changed = True
+End Sub
+
+
+
+Private Sub txtconnectionstring_GotFocus()
+    Label_Info = "Verbindungszeichenfolge für ADO. Für eine Access-Datenbank könnte diese so aussehen:" & Chr(13) & "''Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\deine.mdb;Persist Security Info=False''" & Chr(13) & "oder" & Chr(13) & "''Provider=Microsoft.Jet.OLEDB.4.0;Data Source=''" & Chr(38) & " App.path " & Chr(38) & "''\sample.mdb'';Persist Security Info=False''" & Chr(13) & "Anführungszeichen nicht vergessen!"
+End Sub
+
+Private Sub txtTabelle_DATUM_GotFocus()
+    Label_Info = txtTabelle_DATUM.ToolTipText
+End Sub
+
+Private Sub txtTabelle_NAMEN_GotFocus()
+    Label_Info = txtTabelle_NAMEN.ToolTipText
+End Sub
+
+Private Sub txtTabFeld_ANZAHL_URLAUBSTAGE_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTabFeld_ANZAHL_URLAUBSTAGE_GotFocus()
+    Label_Info = txtTabFeld_ANZAHL_URLAUBSTAGE.ToolTipText
+End Sub
+
+Private Sub txtTabFeld_Datum_bis_GotFocus()
+    Label_Info = txtTabFeld_Datum_bis.ToolTipText
+End Sub
+
+Private Sub txtTabFeld_Datum_von_GotFocus()
+    Label_Info = txtTabFeld_Datum_von.ToolTipText
+End Sub
+
+Private Sub txtTabFeld_NAMEN_GotFocus()
+    Label_Info = txtTabFeld_NAMEN.ToolTipText
+End Sub
+
+Private Sub txtTabFeld_NUMMER_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTabFeld_NAMEN_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTabFeld_NUMMER_GotFocus()
+    Label_Info = txtTabFeld_NUMMER.ToolTipText
+End Sub
+
+Private Sub txtTabFeld_Sonderurlaub_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTabFeld_Datum_bis_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTabFeld_Datum_von_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTabelle_NAMEN_Change()
+    Changed = True
+End Sub
+
+
+Private Sub txtTabelle_DATUM_Change()
+    Changed = True
+End Sub
+Private Sub PropertyPage_ApplyChanges()
+    SelectedControls(0).ConnectionString = txtConnectionString.Text
+    SelectedControls(0).TabFeld_ANZAHL_URLAUBSTAGE = txtTabFeld_ANZAHL_URLAUBSTAGE.Text
+    SelectedControls(0).TabFeld_NUMMER = txtTabFeld_NUMMER.Text
+    SelectedControls(0).TabFeld_NAMEN = txtTabFeld_NAMEN.Text
+    SelectedControls(0).TabFeld_Sonderurlaub = txtTabFeld_Sonderurlaub.Text
+    SelectedControls(0).TabFeld_Datum_bis = txtTabFeld_Datum_bis.Text
+    SelectedControls(0).TabFeld_Datum_von = txtTabFeld_Datum_von.Text
+    SelectedControls(0).Tabelle_NAMEN = txtTabelle_NAMEN.Text
+    SelectedControls(0).Tabelle_DATUM = txtTabelle_DATUM.Text
+    SelectedControls(0).ConnectionString = txtConnectionString.Text
+End Sub
+
+
+Private Sub PropertyPage_SelectionChanged()
+    txtConnectionString.Text = SelectedControls(0).ConnectionString
+    txtTabFeld_ANZAHL_URLAUBSTAGE.Text = SelectedControls(0).TabFeld_ANZAHL_URLAUBSTAGE
+    txtTabFeld_NUMMER.Text = SelectedControls(0).TabFeld_NUMMER
+    txtTabFeld_NAMEN.Text = SelectedControls(0).TabFeld_NAMEN
+    txtTabFeld_Sonderurlaub.Text = SelectedControls(0).TabFeld_Sonderurlaub
+    txtTabFeld_Datum_bis.Text = SelectedControls(0).TabFeld_Datum_bis
+    txtTabFeld_Datum_von.Text = SelectedControls(0).TabFeld_Datum_von
+    txtTabelle_NAMEN.Text = SelectedControls(0).Tabelle_NAMEN
+    txtTabelle_DATUM.Text = SelectedControls(0).Tabelle_DATUM
+    txtConnectionString.Text = SelectedControls(0).ConnectionString
+End Sub
+
+
+Private Sub txtTabFeld_Sonderurlaub_GotFocus()
+    Label_Info = txtTabFeld_Sonderurlaub.ToolTipText
+End Sub
